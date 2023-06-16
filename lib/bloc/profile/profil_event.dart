@@ -8,7 +8,7 @@ abstract class ProfilEvent extends Equatable {
 }
 
 class UpdateTapProfile extends ProfilEvent {
-  UpdateTapProfile();
+  const UpdateTapProfile();
 
   @override
   List<Object> get props => [];
@@ -42,7 +42,7 @@ class UpdateTapAbout2 extends ProfilEvent {
 }
 
 class UpdateTapAbout3 extends ProfilEvent {
-  UpdateTapAbout3({
+  const UpdateTapAbout3({
     required this.zodiac,
     required this.horoscope,
     required this.age,

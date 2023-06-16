@@ -1,5 +1,6 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:bloc_youapp/bloc/login/login_cubit.dart';
 import 'package:bloc_youapp/pages/profilescreen.dart';
@@ -9,6 +10,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import 'package:http/http.dart' as http;
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
@@ -37,10 +39,10 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 18, top: 83, right: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 18, top: 83, right: 10),
                 child: Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
@@ -191,7 +193,7 @@ class LoginScreen extends StatelessWidget {
                       child: GradientText("Register here",
                           gradientType: GradientType.linear,
                           gradientDirection: GradientDirection.ltr,
-                          colors: [
+                          colors: const [
                             Color.fromRGBO(148, 120, 62, 1),
                             Color.fromRGBO(243, 237, 166, 1),
                             Color.fromRGBO(248, 250, 229, 1),
@@ -219,15 +221,15 @@ class LoginScreen extends StatelessWidget {
       if (response.statusCode == 200) {
         // Login success
         final responseData = json.decode(response.body);
-        // Do something with the response data
         if (responseData['message'] == "success") {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text("Login Succes"),
               backgroundColor: Colors.green,
               duration: Duration(seconds: 3),
             ),
           );
+
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -237,7 +239,7 @@ class LoginScreen extends StatelessWidget {
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Please fill in the email & password correctly'),
               backgroundColor: Colors.red,
               duration: Duration(seconds: 3),

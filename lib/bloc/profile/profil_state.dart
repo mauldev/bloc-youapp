@@ -15,7 +15,7 @@ class ProfilState extends Equatable {
   final String savedValue;
   final List<String> save;
 
-  ProfilState({
+  const ProfilState({
     required this.name,
     required this.gender,
     required this.zodiac,
@@ -31,7 +31,7 @@ class ProfilState extends Equatable {
   });
 
   factory ProfilState.initial() {
-    return ProfilState(
+    return const ProfilState(
       name: "",
       gender: "",
       status: "",

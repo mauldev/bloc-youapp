@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -8,9 +6,7 @@ part 'profil_state.dart';
 
 class ProfilBloc extends Bloc<ProfilEvent, ProfilState> {
   ProfilBloc() : super(ProfilState.initial()) {
-    on<ProfilEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<ProfilEvent>((event, emit) {});
 
     on<UpdateTapProfile>((event, emit) {
       emit(state.copyWith(

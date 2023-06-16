@@ -14,7 +14,6 @@ class AddInterestPage extends StatelessWidget {
 
   final String savedValue = '';
 
-  @override
   void onClose() {
     textEditingController.dispose();
     // super.onClose();
@@ -29,6 +28,7 @@ class AddInterestPage extends StatelessWidget {
     save.removeAt(index);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -61,8 +61,8 @@ class AddInterestPage extends StatelessWidget {
                                 email: '',
                               )),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white,
@@ -138,9 +138,7 @@ class AddInterestPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: BlocConsumer<ProfilBloc, ProfilState>(
-                  listener: (context, state) {
-                    // TODO: implement listener
-                  },
+                  listener: (context, state) {},
                   builder: (context, state) {
                     return Padding(
                         padding: const EdgeInsets.only(
@@ -203,28 +201,25 @@ class AddInterestPage extends StatelessWidget {
                                       },
                                     ),
                                     IntrinsicWidth(
-                                      child: Container(
-                                        child: TextFormField(
-                                          decoration: const InputDecoration(
-                                              border: InputBorder.none,
-                                              contentPadding: EdgeInsets.only(
-                                                  bottom: 15, left: 2)),
-                                          onFieldSubmitted: (value) {
-                                            final updatedList =
-                                                List<String>.from(state.save)
-                                                  ..add(textEditingController
-                                                      .text);
-                                            context.read<ProfilBloc>().add(
-                                                UpdateList(save: updatedList));
-                                            textEditingController.clear();
-                                          },
-                                          controller: textEditingController,
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                          textAlignVertical:
-                                              TextAlignVertical.top,
+                                      child: TextFormField(
+                                        decoration: const InputDecoration(
+                                            border: InputBorder.none,
+                                            contentPadding: EdgeInsets.only(
+                                                bottom: 15, left: 2)),
+                                        onFieldSubmitted: (value) {
+                                          final updatedList = List<String>.from(
+                                              state.save)
+                                            ..add(textEditingController.text);
+                                          context.read<ProfilBloc>().add(
+                                              UpdateList(save: updatedList));
+                                          textEditingController.clear();
+                                        },
+                                        controller: textEditingController,
+                                        style: const TextStyle(
+                                          color: Colors.white,
                                         ),
+                                        textAlignVertical:
+                                            TextAlignVertical.top,
                                       ),
                                     )
                                   ]),

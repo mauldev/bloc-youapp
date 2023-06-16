@@ -11,6 +11,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'addinterestscreen.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key, required this.email});
 
@@ -65,8 +66,8 @@ class ProfileScreen extends StatelessWidget {
                               builder: (context) => LoginScreen()),
                         );
                       },
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Icon(
                             Icons.arrow_back_ios,
                             color: Colors.white,
@@ -80,7 +81,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Text(
                       email,
-                      style: TextStyle(color: Colors.white, fontSize: 14),
+                      style: const TextStyle(color: Colors.white, fontSize: 14),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(right: 26.76),
@@ -114,16 +115,14 @@ class ProfileScreen extends StatelessWidget {
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 87, left: 13),
+                              padding: const EdgeInsets.only(top: 87, left: 13),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: BlocBuilder<ProfilBloc, ProfilState>(
                                   builder: (context, state) {
                                     if (state.status == "SAVED") {
                                       return Text(
-                                        state.name +
-                                            ', ' +
-                                            state.age.toString(),
+                                        '${state.name}, ${state.age}',
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
@@ -143,8 +142,8 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsets.only(top: 6, bottom: 12, left: 13),
+                              padding: const EdgeInsets.only(
+                                  top: 6, bottom: 12, left: 13),
                               child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: BlocBuilder<ProfilBloc, ProfilState>(
@@ -164,14 +163,15 @@ class ProfileScreen extends StatelessWidget {
                                   )),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 13),
+                              padding: const EdgeInsets.only(left: 13),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Row(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Color.fromRGBO(31, 35, 31, 1),
+                                        color:
+                                            const Color.fromRGBO(31, 35, 31, 1),
                                         border: Border.all(
                                           color: const Color.fromRGBO(
                                               31, 35, 31, 1), //color of border
@@ -184,7 +184,7 @@ class ProfileScreen extends StatelessWidget {
                                       child: Center(
                                         child: Text(
                                           state.zodiac,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
                                           ),
@@ -192,12 +192,13 @@ class ProfileScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 15,
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Color.fromRGBO(31, 35, 31, 1),
+                                        color:
+                                            const Color.fromRGBO(31, 35, 31, 1),
                                         border: Border.all(
                                           color: const Color.fromRGBO(
                                               31, 35, 31, 1), //color of border
@@ -210,7 +211,7 @@ class ProfileScreen extends StatelessWidget {
                                       child: Center(
                                         child: Text(
                                           state.horoscope,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
                                           ),
@@ -242,16 +243,14 @@ class ProfileScreen extends StatelessWidget {
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 87, left: 13),
+                              padding: const EdgeInsets.only(top: 87, left: 13),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: BlocBuilder<ProfilBloc, ProfilState>(
                                   builder: (context, state) {
                                     if (state.status == "SAVED") {
                                       return Text(
-                                        state.name +
-                                            ', ' +
-                                            state.age.toString(),
+                                        '${state.name}, ${state.age}',
                                         style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
@@ -271,8 +270,8 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsets.only(top: 6, bottom: 12, left: 13),
+                              padding: const EdgeInsets.only(
+                                  top: 6, bottom: 12, left: 13),
                               child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: BlocBuilder<ProfilBloc, ProfilState>(
@@ -292,14 +291,15 @@ class ProfileScreen extends StatelessWidget {
                                   )),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 13),
+                              padding: const EdgeInsets.only(left: 13),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Row(
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Color.fromRGBO(31, 35, 31, 1),
+                                        color:
+                                            const Color.fromRGBO(31, 35, 31, 1),
                                         border: Border.all(
                                           color: const Color.fromRGBO(
                                               31, 35, 31, 1), //color of border
@@ -312,7 +312,7 @@ class ProfileScreen extends StatelessWidget {
                                       child: Center(
                                         child: Text(
                                           state.zodiac,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
                                           ),
@@ -320,12 +320,13 @@ class ProfileScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 15,
                                     ),
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Color.fromRGBO(31, 35, 31, 1),
+                                        color:
+                                            const Color.fromRGBO(31, 35, 31, 1),
                                         border: Border.all(
                                           color: const Color.fromRGBO(
                                               31, 35, 31, 1), //color of border
@@ -338,7 +339,7 @@ class ProfileScreen extends StatelessWidget {
                                       child: Center(
                                         child: Text(
                                           state.horoscope,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontSize: 16,
                                           ),
@@ -367,12 +368,13 @@ class ProfileScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(9),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.only(bottom: 17, left: 13),
+                        padding: const EdgeInsets.only(bottom: 17, left: 13),
                         child: Align(
                           alignment: Alignment.bottomLeft,
                           child: Text(
                             email,
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 16),
                           ),
                         ),
                       ),
@@ -417,7 +419,6 @@ class ProfileScreen extends StatelessWidget {
                                               horoscope: horoscope,
                                               height: heightController.text,
                                               weight: weightController.text));
-                                      print('hhasd' + state.gender);
                                     },
                                     child: const Text(
                                       "Save & Update",
@@ -458,9 +459,10 @@ class ProfileScreen extends StatelessWidget {
                                                       WrapCrossAlignment.end,
                                                   children: [
                                                     ListTile(
-                                                      leading:
-                                                          Icon(Icons.camera),
-                                                      title: Text('Camera'),
+                                                      leading: const Icon(
+                                                          Icons.camera),
+                                                      title:
+                                                          const Text('Camera'),
                                                       onTap: () {
                                                         Navigator.pop(context);
 
@@ -470,13 +472,13 @@ class ProfileScreen extends StatelessWidget {
                                                             .read<ProfilBloc>()
                                                             .add(
                                                                 UpdateTapProfile());
-                                                        print(state.status1);
                                                       },
                                                     ),
                                                     ListTile(
-                                                      leading:
-                                                          Icon(Icons.image),
-                                                      title: Text('Gallery'),
+                                                      leading: const Icon(
+                                                          Icons.image),
+                                                      title:
+                                                          const Text('Gallery'),
                                                       onTap: () async {
                                                         Navigator.pop(context);
                                                         await getImage(
@@ -526,7 +528,6 @@ class ProfileScreen extends StatelessWidget {
                                               Icons.add,
                                               color: Colors.white,
                                             );
-                                            ;
                                           },
                                         ),
                                       )),
@@ -686,7 +687,7 @@ class ProfileScreen extends StatelessWidget {
                                             dropdownStyleData:
                                                 DropdownStyleData(
                                               decoration: BoxDecoration(
-                                                color: Color.fromARGB(
+                                                color: const Color.fromARGB(
                                                     14, 25, 31, 1),
                                                 borderRadius:
                                                     BorderRadius.circular(15),
@@ -770,8 +771,6 @@ class ProfileScreen extends StatelessWidget {
                                                   var age =
                                                       DateTime.now().year -
                                                           selectedDate.year;
-
-                                                  print('hallo $age');
 
                                                   context
                                                       .read<ProfilBloc>()
@@ -1079,7 +1078,7 @@ class ProfileScreen extends StatelessWidget {
                                         onTap: () {
                                           context
                                               .read<ProfilBloc>()
-                                              .add(UpdateTapAbout1());
+                                              .add(const UpdateTapAbout1());
                                         },
                                         child: const Icon(
                                           Icons.edit_outlined,
@@ -1224,7 +1223,7 @@ class ProfileScreen extends StatelessWidget {
                                       onTap: () {
                                         context
                                             .read<ProfilBloc>()
-                                            .add(UpdateTapAbout1());
+                                            .add(const UpdateTapAbout1());
                                       },
                                       child: const Icon(
                                         Icons.edit_outlined,
@@ -1277,7 +1276,7 @@ class ProfileScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Interest",
                                 style: TextStyle(
                                     color: Colors.white,
@@ -1290,7 +1289,7 @@ class ProfileScreen extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (context) => AddInterestPage()),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.edit_outlined,
                                   color: Colors.white,
                                 ),
@@ -1318,7 +1317,7 @@ class ProfileScreen extends StatelessWidget {
                             );
                           } else {
                             return Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   bottom: 23, left: 27, right: 57),
                               child: Align(
                                 alignment: Alignment.centerLeft,
@@ -1389,8 +1388,7 @@ class ProfileScreen extends StatelessWidget {
 
     final oldFile = File(pickedFile!.path);
     selectedImagePath = await oldFile.copy(newPath);
-    // selectedImagePath = File(selectedImagePath.path);
-    // print(selectedImagePath);
+
     return selectedImagePath;
   }
 
@@ -1435,7 +1433,6 @@ class ProfileScreen extends StatelessWidget {
   }
 
   String getZodiac(int month, int day) {
-    print("aa");
     switch (month) {
       case 1:
         return day < 20 ? 'Capricorn' : 'Aquarius';
@@ -1481,7 +1478,7 @@ class ProfileScreen extends StatelessWidget {
       'Horse',
       'Sheep'
     ];
-    print(year);
+
     return zodiacList[(year - 1924) % 12];
   }
 }

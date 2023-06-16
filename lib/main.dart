@@ -3,8 +3,6 @@ import 'package:bloc_youapp/pages/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'pages/profilescreen.dart';
-
 void main() {
   runApp(const MyApp());
 }
